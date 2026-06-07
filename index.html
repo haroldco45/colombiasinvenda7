@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colombia Sin Venda — Día 7: Las Mentiras que te Cuentan</title>
+<meta name="description" content="10 narrativas con las que la guerrilla engaña a los jóvenes — y la verdad documentada detrás de cada una.">
+<meta property="og:title" content="Colombia Sin Venda — Día 7: Las Mentiras que te Cuentan">
+<meta property="og:description" content="'La guerrilla lucha por los pobres.' '¿Las FARC eran Robin Hood?' Desmontamos cada mentira con datos reales.">
+<meta property="og:image" content="https://placehold.co/1200x630/0a0012/e040fb?text=Las+Mentiras+que+te+Cuentan">
+<meta property="og:url" content="https://haroldco45.github.io/colombia-sin-venda/dia07">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0a0012">
+<link rel="manifest" href="#" id="manifest-link">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Syne+Mono&family=Crimson+Pro:ital,wght@0,300;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --mag:#e040fb;
+  --mag-dim:#9c27b0;
+  --mag-s:rgba(224,64,251,0.1);
+  --cyan:#00e5ff;
+  --verde:#39ff14;
+  --rojo:#ff4560;
+  --amarillo:#ffd166;
+  --fondo:#0a0012;
+  --panel:#130020;
+  --panel2:#180028;
+  --borde:rgba(224,64,251,0.18);
+  --borde-f:rgba(224,64,251,0.45);
+  --blanco:#f5eeff;
+  --texto:#b8a0cc;
+  --dim:#6a5580;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:var(--fondo);color:var(--blanco);font-family:'Crimson Pro',serif;overflow-x:hidden;}
+
+/* ── INTRO ── */
+#intro{
+  position:fixed;inset:0;background:var(--fondo);z-index:9999;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;padding:2rem;
+  animation:killI .5s ease 3.6s forwards;
+}
+.intro-g{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(1.6rem,7vw,2.8rem);
+  letter-spacing:.04em;text-align:center;color:var(--blanco);
+  opacity:0;animation:fU .5s ease .3s forwards;
+  position:relative;
+}
+.intro-g em{color:var(--mag);font-style:normal;}
+.intro-sub{
+  font-family:'Syne Mono',monospace;font-size:.6rem;
+  letter-spacing:.22em;color:var(--mag);
+  opacity:0;animation:fU .4s ease .9s forwards;
+}
+.intro-cita{
+  font-family:'Crimson Pro',serif;font-style:italic;
+  font-size:1rem;color:var(--texto);text-align:center;
+  max-width:300px;line-height:1.6;
+  opacity:0;animation:fU .5s ease 1.5s forwards;
+}
+.intro-sep{
+  width:0;height:1px;background:var(--mag);opacity:0;
+  animation:fU .3s ease 2.1s forwards,growW .6s ease 2.1s forwards;
+}
+@keyframes fU{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@keyframes killI{to{opacity:0;pointer-events:none;}}
+@keyframes growW{to{width:160px;}}
+
+/* ── HEADER ── */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,0,18,.97);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--borde);
+  padding:.75rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.h-logo{font-family:'Syne Mono',monospace;font-size:.75rem;letter-spacing:.1em;}
+.h-logo em{color:var(--mag);font-style:normal;}
+.h-dia{
+  font-family:'Syne Mono',monospace;font-size:.56rem;
+  color:var(--mag);background:var(--mag-s);
+  border:1px solid var(--borde-f);padding:.22rem .55rem;letter-spacing:.1em;
+}
+
+/* ── HERO ── */
+.hero{
+  min-height:88vh;display:flex;flex-direction:column;justify-content:center;
+  padding:3rem 1.4rem 3.5rem;position:relative;overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse at 50% 110%,rgba(224,64,251,.09) 0%,transparent 60%),
+             radial-gradient(ellipse at 0% 40%,rgba(0,229,255,.04) 0%,transparent 50%);
+  pointer-events:none;
+}
+/* ruido de fondo */
+.hero-noise{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");
+  opacity:.4;
+}
+.hero-eyebrow{
+  font-family:'Syne Mono',monospace;font-size:.62rem;
+  color:var(--mag);letter-spacing:.2em;margin-bottom:1.2rem;
+  opacity:0;animation:fU .5s ease 3.8s forwards;
+}
+.hero-title{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(3rem,11vw,6.5rem);line-height:.92;
+  margin-bottom:1.8rem;
+  opacity:0;animation:fU .7s ease 4s forwards;
+}
+.hero-title .tM{color:var(--mag);}
+.hero-title .tC{color:var(--cyan);}
+.hero-desc{
+  font-size:1.1rem;font-style:italic;line-height:1.8;
+  color:var(--texto);max-width:500px;margin-bottom:2rem;
+  opacity:0;animation:fU .6s ease 4.2s forwards;
+}
+.hero-alerta{
+  display:inline-flex;align-items:center;gap:.7rem;
+  background:rgba(255,69,96,.08);border:1px solid rgba(255,69,96,.3);
+  border-radius:4px;padding:.9rem 1.2rem;max-width:440px;
+  opacity:0;animation:fU .5s ease 4.4s forwards;
+}
+.ha-icon{font-size:1.3rem;flex-shrink:0;}
+.ha-text{
+  font-family:'Syne Mono',monospace;font-size:.62rem;
+  color:var(--blanco);letter-spacing:.06em;line-height:1.5;
+}
+.ha-text strong{color:var(--rojo);}
+
+/* ── RETO ── */
+.reto-strip{
+  background:rgba(224,64,251,.03);
+  border-top:1px solid var(--borde);border-bottom:1px solid var(--borde);
+  padding:1.1rem 1.4rem;
+}
+.reto-tag{
+  font-family:'Syne Mono',monospace;font-size:.56rem;
+  color:var(--dim);letter-spacing:.15em;margin-bottom:.6rem;
+}
+.reto-dots{display:flex;gap:4px;flex-wrap:wrap;}
+.dot{width:14px;height:14px;border-radius:2px;background:rgba(255,255,255,.05);}
+.dot.done{background:rgba(224,64,251,.45);}
+.dot.hoy{background:var(--mag);box-shadow:0 0 10px rgba(224,64,251,.55);}
+
+/* ── SECCIONES ── */
+.sec{padding:3.2rem 1.4rem;position:relative;z-index:1;}
+.sec-alt{background:var(--panel);}
+.sec-tag{
+  font-family:'Syne Mono',monospace;font-size:.58rem;
+  color:var(--mag);letter-spacing:.18em;margin-bottom:.5rem;
+}
+.sec-title{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(1.8rem,6vw,2.6rem);line-height:1.02;
+  color:var(--blanco);margin-bottom:1.8rem;
+}
+.sec-title em{color:var(--mag);font-style:normal;}
+
+/* ── TARJETAS DE MENTIRA / VERDAD ── */
+.mentiras-list{display:flex;flex-direction:column;gap:1.4rem;}
+
+.mentira-card{
+  border-radius:6px;overflow:hidden;
+  border:1px solid var(--borde);
+  background:var(--panel2);
+}
+
+.mc-header{
+  padding:1rem 1.2rem;
+  background:rgba(255,69,96,.07);
+  border-bottom:1px solid rgba(255,69,96,.15);
+  display:flex;align-items:flex-start;gap:.8rem;
+  cursor:pointer;
+  transition:background .2s ease;
+}
+.mc-header:hover{background:rgba(255,69,96,.12);}
+.mc-num{
+  font-family:'Syne Mono',monospace;font-size:.6rem;
+  color:rgba(255,69,96,.6);flex-shrink:0;margin-top:2px;
+}
+.mc-mentira-txt{
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:1rem;color:var(--rojo);flex:1;line-height:1.3;
+}
+.mc-toggle{
+  font-family:'Syne Mono',monospace;font-size:.65rem;
+  color:var(--dim);flex-shrink:0;margin-top:2px;
+  transition:transform .3s ease;
+}
+.mc-toggle.open{transform:rotate(180deg);}
+
+.mc-body{
+  display:none;
+  padding:1.2rem;
+}
+.mc-body.open{display:block;}
+
+.mc-origen{
+  font-family:'Syne Mono',monospace;font-size:.54rem;
+  color:var(--dim);letter-spacing:.1em;margin-bottom:.8rem;
+  display:flex;align-items:center;gap:.5rem;
+}
+.mc-origen::before{content:'▶';color:var(--mag);font-size:.5rem;}
+
+.mc-seccion{margin-bottom:1rem;}
+.mc-seccion:last-child{margin-bottom:0;}
+
+.mc-label{
+  font-family:'Syne Mono',monospace;font-size:.56rem;
+  letter-spacing:.12em;padding:.2rem .6rem;border-radius:2px;
+  display:inline-block;margin-bottom:.5rem;
+}
+.lbl-mentira{background:rgba(255,69,96,.1);color:var(--rojo);border:1px solid rgba(255,69,96,.25);}
+.lbl-verdad{background:rgba(57,255,20,.08);color:#39ff14;border:1px solid rgba(57,255,20,.2);}
+.lbl-dato{background:rgba(0,229,255,.08);color:var(--cyan);border:1px solid rgba(0,229,255,.2);}
+.lbl-reflexion{background:rgba(224,64,251,.08);color:var(--mag);border:1px solid var(--borde);}
+
+.mc-texto{
+  font-size:.97rem;line-height:1.75;color:var(--texto);
+  font-style:italic;
+}
+.mc-dato{
+  font-family:'Syne Mono',monospace;font-size:.6rem;
+  color:var(--cyan);letter-spacing:.06em;line-height:1.6;
+  background:rgba(0,229,255,.04);border-left:2px solid rgba(0,229,255,.3);
+  padding:.6rem .9rem;border-radius:0 3px 3px 0;
+  margin-top:.5rem;
+}
+.mc-reflexion{
+  font-size:.95rem;font-style:italic;
+  color:var(--mag);line-height:1.7;margin-top:.4rem;
+}
+
+.mc-fuente{
+  font-family:'Syne Mono',monospace;font-size:.52rem;
+  color:var(--dim);letter-spacing:.08em;margin-top:.8rem;
+  padding-top:.7rem;border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* ── CÓMO TE ENGANCHAN ── */
+.pasos-list{display:flex;flex-direction:column;gap:.8rem;}
+.paso{
+  display:flex;gap:.9rem;align-items:flex-start;
+  background:var(--panel2);border-radius:4px;
+  padding:1rem 1.1rem;
+  border-left:3px solid var(--mag);
+}
+.paso-n{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.5rem;color:rgba(224,64,251,.25);
+  line-height:1;flex-shrink:0;width:2rem;
+}
+.paso-titulo{
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;
+  color:var(--blanco);margin-bottom:.3rem;
+}
+.paso-desc{font-size:.88rem;color:var(--texto);line-height:1.6;}
+.paso-tag{
+  display:inline-block;margin-top:.4rem;
+  font-family:'Syne Mono',monospace;font-size:.52rem;
+  color:var(--mag);background:var(--mag-s);
+  border:1px solid var(--borde);padding:.15rem .5rem;
+  border-radius:2px;letter-spacing:.08em;
+}
+
+/* ── SEÑALES DE ALERTA ── */
+.señales-grid{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+.señal{
+  background:var(--panel2);border-radius:4px;
+  padding:1rem;border-top:2px solid var(--rojo);
+}
+.señal.ok{border-top-color:var(--verde);}
+.señal-emoji{font-size:1.4rem;margin-bottom:.4rem;display:block;}
+.señal-titulo{
+  font-family:'Syne',sans-serif;font-weight:700;
+  font-size:.88rem;text-transform:uppercase;letter-spacing:.04em;
+  color:var(--blanco);margin-bottom:.25rem;
+}
+.señal-desc{font-family:'Syne Mono',monospace;font-size:.54rem;color:var(--dim);line-height:1.5;}
+
+/* ── REFLEXIÓN ── */
+.ref-sec{
+  padding:3.5rem 1.4rem;background:var(--panel);
+  text-align:center;position:relative;z-index:1;
+}
+.ref-deco{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:8rem;color:rgba(224,64,251,.05);
+  line-height:1;margin-bottom:-3rem;
+  user-select:none;pointer-events:none;
+}
+.ref-quote{
+  font-size:clamp(1.1rem,4vw,1.4rem);font-style:italic;
+  line-height:1.8;color:var(--blanco);
+  max-width:460px;margin:0 auto 1.2rem;
+  position:relative;z-index:1;
+}
+.ref-cite{
+  font-family:'Syne Mono',monospace;font-size:.58rem;
+  color:var(--mag);letter-spacing:.15em;
+}
+
+/* ── CTA ── */
+.cta-sec{padding:3rem 1.4rem;text-align:center;position:relative;z-index:1;}
+.cta-title{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:1.9rem;color:var(--blanco);margin-bottom:.7rem;
+}
+.cta-body{
+  font-style:italic;font-size:.95rem;color:var(--texto);
+  max-width:360px;margin:0 auto 2rem;line-height:1.65;
+}
+.btn-wa{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:#25D366;color:white;
+  font-family:'Syne Mono',monospace;font-size:.72rem;
+  letter-spacing:.08em;padding:.9rem 1.8rem;
+  border-radius:4px;border:none;cursor:pointer;text-decoration:none;
+  transition:transform .15s,box-shadow .15s;margin-bottom:1.5rem;
+}
+.btn-wa:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3);}
+.nav-dias{
+  font-family:'Syne Mono',monospace;font-size:.58rem;
+  color:var(--dim);letter-spacing:.08em;
+}
+.nav-dias span{color:var(--mag);}
+
+/* ── INSTALL ── */
+#install-banner{
+  position:fixed;bottom:0;left:0;right:0;background:var(--panel);
+  border-top:2px solid var(--mag);padding:1rem 1.4rem;
+  display:none;align-items:center;justify-content:space-between;gap:1rem;z-index:1000;
+}
+#install-banner.on{display:flex;}
+.ib-txt{font-family:'Syne Mono',monospace;font-size:.6rem;color:var(--blanco);line-height:1.5;}
+.ib-txt strong{color:var(--mag);display:block;}
+.btn-ib{background:var(--mag-dim);color:white;border:none;border-radius:3px;
+  font-family:'Syne Mono',monospace;font-size:.62rem;
+  padding:.55rem .9rem;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.btn-x{background:none;border:none;color:var(--dim);font-size:1.2rem;cursor:pointer;flex-shrink:0;}
+
+/* ── FOOTER ── */
+footer{
+  padding:2rem 1.4rem;text-align:center;
+  border-top:1px solid var(--borde);
+  font-family:'Syne Mono',monospace;font-size:.54rem;
+  color:var(--dim);letter-spacing:.1em;line-height:1.9;
+  position:relative;z-index:1;
+}
+footer strong{color:var(--mag);}
+
+/* ── REVEAL ── */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s;}
+.reveal.on{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- INTRO -->
+<div id="intro">
+  <div class="intro-g">DETECTANDO <em>MENTIRAS</em></div>
+  <div class="intro-sub">COLOMBIA SIN VENDA · DÍA 07 / 20</div>
+  <div class="intro-sep"></div>
+  <p class="intro-cita">"La guerrilla lleva 60 años usando los mismos discursos. Es hora de desmantelarlos."</p>
+</div>
+
+<!-- INSTALL -->
+<div id="install-banner">
+  <div class="ib-txt"><strong>📲 Instala Colombia Sin Venda</strong>20 días · offline</div>
+  <button class="btn-ib" id="btn-inst">INSTALAR</button>
+  <button class="btn-x" id="btn-x">✕</button>
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="h-logo">COLOMBIA <em>SIN VENDA</em></div>
+  <div class="h-dia">DÍA 07 / 20</div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-noise"></div>
+
+  <p class="hero-eyebrow">🎭 Las narrativas con las que te engañan</p>
+  <h1 class="hero-title">
+    LAS<br>
+    <span class="tM">MENTIRAS</span><br>
+    que te<br>
+    <span class="tC">cuentan</span>
+  </h1>
+  <p class="hero-desc">
+    Hay frases que suenan a justicia pero esconden décadas de crímenes.
+    Hoy desmontamos 10 narrativas que la guerrilla usa para 
+    engañar jóvenes — con datos reales, sin propaganda de ningún lado.
+  </p>
+  <div class="hero-alerta">
+    <span class="ha-icon">⚠️</span>
+    <div class="ha-text">
+      <strong>Hoy reclutan por TikTok.</strong>
+      En 2024, las disidencias de las FARC publicaban videos en esa red 
+      con números de contacto para reclutar jóvenes.
+      Conocer sus discursos es la mejor defensa.
+    </div>
+  </div>
+</section>
+
+<!-- RETO -->
+<div class="reto-strip reveal">
+  <div class="reto-tag">▶ RETO 20 DÍAS DE VERDAD — Colombia Sin Venda</div>
+  <div class="reto-dots" id="dots"></div>
+</div>
+
+<!-- MENTIRAS EXPANDIBLES -->
+<section class="sec reveal">
+  <p class="sec-tag">// las 10 mentiras</p>
+  <h2 class="sec-title">TOCA CADA UNA<br><em>Y CONOCE LA VERDAD</em></h2>
+
+  <div class="mentiras-list">
+
+    <!-- 01 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">01</span>
+        <span class="mc-mentira-txt">"La guerrilla lucha por los pobres"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">La frase más usada en redes para justificar el conflicto</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que las FARC y el ELN nacieron para defender a los campesinos pobres del Estado y los terratenientes, y que por eso su violencia era justa y necesaria.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">Los campesinos fueron las principales víctimas de la guerrilla, no sus beneficiarios. El CNMH documenta que las FARC desplazaron, secuestraron y masacraron a más comunidades rurales que cualquier otro actor del conflicto.</p>
+          <div class="mc-dato">▶ 7.752.964 campesinos desplazados — mayoría por acciones guerrilleras · CNMH<br>▶ Los municipios más pobres del país son los más afectados por la guerrilla, no los más "liberados"</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">¿Cómo puede alguien decir que lucha por los pobres si desplazó a casi 8 millones de ellos de sus tierras?</p>
+        </div>
+        <div class="mc-fuente">Fuentes: CNMH "Basta Ya" · Comisión de la Verdad 2022 · UARIV</div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">02</span>
+        <span class="mc-mentira-txt">"Las FARC eran como Robin Hood"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Narrativa frecuente en canciones de rap y discursos universitarios</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que las FARC robaban a los ricos para darle a los pobres, que eran un movimiento popular con apoyo genuino de las comunidades campesinas.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">Las FARC cobraban "vacunas" (extorsión) a campesinos, ganaderos y pequeños comerciantes — no a millonarios. Su principal fuente de ingresos fue el narcotráfico: controlaban el 60% de la cocaína que salía de Colombia.</p>
+          <div class="mc-dato">▶ Ingresos FARC del narcotráfico: estimados $600 millones/año · DEA<br>▶ 50.770 secuestros — la mayoría a campesinos y comerciantes locales, no a élites<br>▶ El 80% de sus víctimas eran civiles pobres del campo · JEP Caso 07</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Robin Hood no sembraba minas en los campos de los campesinos ni reclutaba a sus hijos de 9 años para la guerra.</p>
+        </div>
+        <div class="mc-fuente">Fuentes: JEP · DEA · CNMH Secuestro 2013</div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">03</span>
+        <span class="mc-mentira-txt">"El Estado es el único culpable"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Narrativa que desplaza toda la responsabilidad al gobierno</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que el Estado colombiano fue el único o principal responsable de la violencia, y que la guerrilla solo reaccionó ante la opresión estatal.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">La Comisión de la Verdad — creada precisamente para investigar esto — concluyó que TODOS los actores armados cometieron crímenes graves. El Estado tuvo responsabilidades graves, sí. Pero la guerrilla también. Ninguno puede esconderse detrás del otro.</p>
+          <div class="mc-dato">▶ Guerrillas: responsables del 90%+ de secuestros, 75% de reclutamiento infantil · JEP<br>▶ Paramilitares: 42% de asesinatos selectivos · CNMH<br>▶ Estado: responsable de falsos positivos (6.402 víctimas) y omisión · CEV</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Que el Estado haya fallado no justifica secuestrar niños ni sembrar minas en campos de campesinos. Ambas cosas son ciertas al mismo tiempo.</p>
+        </div>
+        <div class="mc-fuente">Fuentes: Comisión de la Verdad "Hay Futuro Si Hay Verdad" 2022</div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">04</span>
+        <span class="mc-mentira-txt">"La guerrilla defiende el campo"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Usada para justificar presencia guerrillera en zonas rurales</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que los grupos guerrilleros son los verdaderos defensores del campo colombiano frente al abandono del Estado y los latifundistas.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">Los departamentos donde la guerrilla tuvo más control histórico son los más pobres, los más atrasados y los con menos acceso a servicios. No "desarrollaron" ni "protegieron" nada. La guerrilla extrajo recursos de esas regiones y las dejó más destruidas.</p>
+          <div class="mc-dato">▶ Chocó, Caquetá, Guaviare: más de 50 años de presencia guerrillera = últimos en IDH nacional<br>▶ 4,47 km² de tierras agrícolas contaminadas con minas antipersona · PAICMA<br>▶ Zonas de cultivo de coca: generan $200/mes para el campesino vs $6.000 para la guerrilla · UNODC</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Después de 60 años "defendiendo el campo", ¿por qué las regiones donde mandaron son las más pobres del país?</p>
+        </div>
+        <div class="mc-fuente">Fuentes: PAICMA · UNODC · DANE IDH Municipal 2023</div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">05</span>
+        <span class="mc-mentira-txt">"Los jóvenes se unían por convicción"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Narrativa que romantiza el reclutamiento como decisión libre</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que los jóvenes que entraron a la guerrilla lo hicieron libremente, motivados por ideales políticos y convicción genuina en la lucha armada.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">La JEP documentó que el reclutamiento fue sistemáticamente forzado o basado en engaño. "Diego" en el Espectador lo dijo claro: "Pasaron años antes de que supiera que había sido víctima. Creí que me unía por convicción — en realidad me reclutaron a través de la persuasión."</p>
+          <div class="mc-dato">▶ +18.000 menores reclutados — muchos sin entender lo que firmaban · JEP Caso 007<br>▶ Edad mínima documentada: 9 años · CEV<br>▶ Las FARC usaban Facebook para contactar jóvenes vulnerables · Infobae / EFE 2024</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">¿Puede un niño de 13 años tomar una "decisión libre" de entrar a la guerra? ¿O lo convencieron con mentiras?</p>
+        </div>
+        <div class="mc-fuente">Fuentes: JEP · El Espectador · ICBF · EFE 2024</div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">06</span>
+        <span class="mc-mentira-txt">"El secuestro era para financiar la lucha"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Justificación moral del secuestro como "necesidad política"</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que el secuestro era un recurso político y económico legítimo en el contexto del conflicto, una herramienta más de la guerra.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">El secuestro es un crimen de lesa humanidad bajo el derecho internacional, sin importar quién lo cometa ni con qué objetivo. 464 rehenes fueron asesinados durante su cautiverio. Familias destruidas durante décadas. Ningún fin político justifica eso.</p>
+          <div class="mc-dato">▶ 50.770 víctimas de secuestro entre 1990–2018 · Comisión de la Verdad<br>▶ 464 rehenes asesinados en cautiverio · CNMH<br>▶ En 2025 siguen secuestradas 19 personas en Colombia · Inteligencia militar</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Los 12 diputados del Valle fueron secuestrados 5 años y luego asesinados. ¿Eso es "financiar una lucha" o es terrorismo puro?</p>
+        </div>
+        <div class="mc-fuente">Fuentes: Comisión de la Verdad · CNMH Secuestro · Armada Nacional 2025</div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">07</span>
+        <span class="mc-mentira-txt">"Son rebeldes contra la injusticia"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">La narrativa más usada en discursos universitarios y redes</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que la guerrilla representa la rebeldía legítima contra un sistema injusto, y que por eso sus acciones tienen una justificación moral superior.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">Un "rebelde contra la injusticia" no siembra minas en caminos campesinos, no recluta niños de 9 años, no cobra extorsión a tenderos y no convierte la coca en su principal negocio. Lo que describen como "rebeldía" es en realidad crimen organizado con discurso político.</p>
+          <div class="mc-dato">▶ Ingresos FARC 2015: 70% narcotráfico, 20% extorsión, 10% otros · InSight Crime<br>▶ Las disidencias usan TikTok para reclutar con discursos de "rebeldía" · Infobae 2024<br>▶ 4.237 masacres documentadas — mayoría contra civiles "del pueblo" que decían defender</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">¿Cómo se llama una organización que cobra extorsión, trafica coca y recluta niños? No se llama movimiento social — se llama cartel armado.</p>
+        </div>
+        <div class="mc-fuente">Fuentes: InSight Crime · Infobae / EFE 2024 · CNMH</div>
+      </div>
+    </div>
+
+    <!-- 08 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">08</span>
+        <span class="mc-mentira-txt">"La coca era su única forma de sobrevivir"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Justificación del narcotráfico como subsistencia, no negocio</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que la guerrilla controló el narcotráfico por necesidad, como única salida frente al abandono estatal, y que los beneficios iban a financiar causas sociales.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">El negocio de la coca enriqueció a los comandantes y financió un aparato militar. El campesino que cultiva coca recibe $200 al mes. La guerrilla que controla el territorio recibe $6.000 por cada kilo exportado. No es subsistencia — es explotación del campesino más pobre.</p>
+          <div class="mc-dato">▶ Ingreso mensual raspachín: $150–250 USD · UNODC 2023<br>▶ Ingreso guerrilla por kg de base de coca: $800–1.200 USD · DEA<br>▶ Colombia: 230.000 hectáreas de coca en 2023, récord histórico — con "paz" firmada</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Si la coca era para "sobrevivir", ¿por qué los comandantes de las FARC tenían fincas en Venezuela y cuentas en el exterior?</p>
+        </div>
+        <div class="mc-fuente">Fuentes: UNODC · DEA · InSight Crime · Semana 2024</div>
+      </div>
+    </div>
+
+    <!-- 09 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">09</span>
+        <span class="mc-mentira-txt">"El ELN protege las comunidades"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">Narrativa activa hoy en zonas de Chocó, Catatumbo y Cauca</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que el ELN actúa como fuerza de protección comunitaria donde el Estado no llega, y que sus acciones tienen respaldo popular genuino.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">Las comunidades que "protege" el ELN tienen prohibido moverse sin permiso, no pueden comunicarse libremente y viven bajo amenaza constante. En el Catatumbo (2025) el ELN generó una crisis humanitaria que desplazó a miles. Eso no es protección — es control.</p>
+          <div class="mc-dato">▶ ELN: mayor reclutador de menores activo en Colombia en 2021 · ICBF<br>▶ Catatumbo 2025: crisis humanitaria con 32.000+ desplazados por acciones del ELN<br>▶ 85 de 142 casos de reclutamiento infantil en 2021 fueron del ELN · JEP</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Una organización que "protege" pero te prohíbe salir de tu vereda, recluta a tus hijos y cobra vacuna a tu tienda no es tu protector — es tu carcelero.</p>
+        </div>
+        <div class="mc-fuente">Fuentes: ICBF · JEP · OCHA Colombia 2025 · Defensoría del Pueblo</div>
+      </div>
+    </div>
+
+    <!-- 10 -->
+    <div class="mentira-card">
+      <div class="mc-header" onclick="toggle(this)">
+        <span class="mc-num">10</span>
+        <span class="mc-mentira-txt">"Unirme les daría poder a los pobres"</span>
+        <span class="mc-toggle">▼</span>
+      </div>
+      <div class="mc-body">
+        <div class="mc-origen">La trampa final — dirigida directamente a jóvenes vulnerables</div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-mentira">LA MENTIRA</span>
+          <p class="mc-texto">Que unirse a un grupo armado es una forma de empoderamiento, de cambio social, de ser parte de algo más grande que uno mismo.</p>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-verdad">LA VERDAD</span>
+          <p class="mc-texto">Los jóvenes que entran a grupos armados no ganan poder — lo pierden. Pierden su nombre (les dan un alias), su familia (no pueden contactarla), su libertad (no pueden salir sin permiso) y con frecuencia su vida. Son el escalón más bajo de una estructura criminal jerarquizada.</p>
+          <div class="mc-dato">▶ Expectativa de vida de un combatiente raso: 3–5 años · Análisis CNMH<br>▶ Los que intentan escapar son ejecutados por sus propios compañeros · JEP<br>▶ Fabián tuvo que matar a su guardián para escapar del ELN a los 17 años · RCN Radio</div>
+        </div>
+        <div class="mc-seccion">
+          <span class="mc-label lbl-reflexion">PIÉNSALO</span>
+          <p class="mc-reflexion">Si unirse a la guerrilla te da "poder", ¿por qué los comandantes vivían en mansiones y los soldados rasos morían en la selva?</p>
+        </div>
+        <div class="mc-fuente">Fuentes: CNMH · JEP · RCN Radio 2024 · Defensoría del Pueblo</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CÓMO TE ENGANCHAN -->
+<section class="sec sec-alt reveal">
+  <p class="sec-tag">// cómo operan hoy</p>
+  <h2 class="sec-title">EL MÉTODO<br><em>DEL ENGAÑO</em></h2>
+
+  <div class="pasos-list">
+    <div class="paso">
+      <div class="paso-n">1</div>
+      <div>
+        <div class="paso-titulo">Te contactan donde estás</div>
+        <div class="paso-desc">TikTok, WhatsApp, grupos de Facebook. Publican videos "cool" con uniformes, armas y discursos. En los comentarios ponen números para "ingresar". La Policía y la Defensoría ya alertaron sobre esto en 2024.</div>
+        <span class="paso-tag">Fuente: Infobae / EFE oct. 2024</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-n">2</div>
+      <div>
+        <div class="paso-titulo">Usan tus frustraciones legítimas</div>
+        <div class="paso-desc">La desigualdad existe. La pobreza existe. El abandono estatal existe. Toman esas realidades reales y las convierten en argumento para justificar crímenes. Mezclan verdad con mentira para que no lo notes.</div>
+        <span class="paso-tag">Técnica documentada por la Comisión de la Verdad</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-n">3</div>
+      <div>
+        <div class="paso-titulo">Te hacen sentir especial</div>
+        <div class="paso-desc">Prometen pertenencia, identidad, propósito. A jóvenes en situación vulnerable les ofrecen lo que más necesitan: ser parte de algo. Solo cuando es tarde descubren las condiciones reales.</div>
+        <span class="paso-tag">Patrón de reclutamiento · JEP Caso 007</span>
+      </div>
+    </div>
+    <div class="paso">
+      <div class="paso-n">4</div>
+      <div>
+        <div class="paso-titulo">Cuando quieres salir, ya no puedes</div>
+        <div class="paso-desc">Los que intentan desertar son amenazados, perseguidos o ejecutados. No es una organización política — es una trampa con discurso político. Diego tardó años en entender que había sido víctima, no combatiente libre.</div>
+        <span class="paso-tag">Testimonios JEP · El Espectador 2021</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÑALES DE ALERTA -->
+<section class="sec reveal">
+  <p class="sec-tag">// detecta las señales</p>
+  <h2 class="sec-title">SI ESCUCHAS<br><em>ESTAS FRASES</em></h2>
+
+  <div class="señales-grid">
+    <div class="señal">
+      <span class="señal-emoji">🚩</span>
+      <div class="señal-titulo">"La lucha armada es necesaria"</div>
+      <div class="señal-desc">Discurso que justifica la violencia como única salida. Señal roja.</div>
+    </div>
+    <div class="señal">
+      <span class="señal-emoji">🚩</span>
+      <div class="señal-titulo">"El Estado es el peor"</div>
+      <div class="señal-desc">Verdad parcial usada para invisibilizar crímenes guerrilleros.</div>
+    </div>
+    <div class="señal">
+      <span class="señal-emoji">🚩</span>
+      <div class="señal-titulo">"Son los únicos que defienden al pueblo"</div>
+      <div class="señal-desc">Falsa dicotomía. Hay miles de formas de defender al pueblo sin armas.</div>
+    </div>
+    <div class="señal">
+      <span class="señal-emoji">🚩</span>
+      <div class="señal-titulo">"Te pueden dar trabajo y seguridad"</div>
+      <div class="señal-desc">El gancho más directo. Trampa dirigida a jóvenes vulnerables.</div>
+    </div>
+    <div class="señal ok">
+      <span class="señal-emoji">✅</span>
+      <div class="señal-titulo">Busca otras fuentes</div>
+      <div class="señal-desc">CNMH, CEV, JEP: la verdad está documentada y es pública.</div>
+    </div>
+    <div class="señal ok">
+      <span class="señal-emoji">✅</span>
+      <div class="señal-titulo">Habla con alguien de confianza</div>
+      <div class="señal-desc">Familia, profe, líder comunitario. No decidas solo bajo presión.</div>
+    </div>
+  </div>
+</section>
+
+<!-- REFLEXIÓN -->
+<section class="ref-sec reveal">
+  <div class="ref-deco">"</div>
+  <blockquote class="ref-quote">
+    "La desigualdad en Colombia es real. 
+    La pobreza es real. El abandono estatal es real. 
+    Pero nada de eso justifica secuestrar niños, 
+    sembrar minas o convertir la coca en un negocio 
+    millonario que explota al campesino más pobre. 
+    Conocer la diferencia es lo que te protege."
+  </blockquote>
+  <p class="ref-cite">— COLOMBIA SIN VENDA · Día 7 de 20</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec reveal">
+  <h2 class="cta-title">Comparte<br>la verdad</h2>
+  <p class="cta-body">
+    Un joven que conoce estas narrativas no puede ser manipulado con ellas. 
+    Comparte con alguien que lo necesite.
+  </p>
+  <a id="btn-wa" class="btn-wa" href="#" target="_blank" rel="noopener">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    Compartir en WhatsApp
+  </a>
+  <div class="nav-dias">
+    ← DÍA 06: Poblados Arrasados · PRÓXIMO → <span>DÍA 08: Las Mujeres del Conflicto</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  Desarrollada por <strong>Vibras Positivas HM</strong> — Derechos de Autor Reservados<br>
+  Caucasia, Antioquia · Colombia · 2026<br>
+  Fuentes: CNMH · Comisión de la Verdad · JEP · ICBF · InSight Crime · UNODC · Infobae/EFE 2024
+</footer>
+
+<!-- MANIFEST -->
+<script>
+const m={name:"Colombia Sin Venda",short_name:"Sin Venda",
+description:"20 días de verdad sobre el conflicto armado colombiano",
+start_url:"./",display:"standalone",
+background_color:"#0a0012",theme_color:"#e040fb",
+icons:[
+  {src:"https://placehold.co/192x192/e040fb/ffffff?text=CSV",sizes:"192x192",type:"image/png"},
+  {src:"https://placehold.co/512x512/e040fb/ffffff?text=CSV",sizes:"512x512",type:"image/png"}
+]};
+document.getElementById('manifest-link').href=URL.createObjectURL(new Blob([JSON.stringify(m)],{type:'application/json'}));
+</script>
+<script>
+if('serviceWorker' in navigator){
+  const sw=`const C='csv-dia07-v1';
+  self.addEventListener('install',e=>e.waitUntil(caches.open(C).then(c=>c.addAll([location.href]))));
+  self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));`;
+  navigator.serviceWorker.register(URL.createObjectURL(new Blob([sw],{type:'application/javascript'}))).catch(()=>{});
+}
+</script>
+
+<script>
+// DOTS
+const dotsEl=document.getElementById('dots');
+for(let i=1;i<=20;i++){
+  const d=document.createElement('div');
+  d.className='dot'+(i<7?' done':'')+(i===7?' hoy':'');
+  dotsEl.appendChild(d);
+}
+
+// REVEAL
+const ro=new IntersectionObserver(e=>{
+  e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('on');ro.unobserve(x.target);}});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// TOGGLE MENTIRAS
+function toggle(header){
+  const body=header.nextElementSibling;
+  const arrow=header.querySelector('.mc-toggle');
+  const isOpen=body.classList.contains('open');
+  // cerrar todos
+  document.querySelectorAll('.mc-body.open').forEach(b=>b.classList.remove('open'));
+  document.querySelectorAll('.mc-toggle.open').forEach(a=>a.classList.remove('open'));
+  // abrir este si estaba cerrado
+  if(!isOpen){
+    body.classList.add('open');
+    arrow.classList.add('open');
+    body.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+}
+
+// INSTALL
+let dp;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e;document.getElementById('install-banner').classList.add('on');});
+document.getElementById('btn-inst').addEventListener('click',async()=>{if(!dp)return;dp.prompt();await dp.userChoice;dp=null;document.getElementById('install-banner').classList.remove('on');});
+document.getElementById('btn-x').addEventListener('click',()=>document.getElementById('install-banner').classList.remove('on'));
+
+// WHATSAPP
+document.getElementById('btn-wa').href='https://wa.me/?text='+encodeURIComponent(
+  '🇨🇴 *COLOMBIA SIN VENDA — Día 7*\n'+
+  '"Las Mentiras que te Cuentan"\n\n'+
+  '10 narrativas con las que la guerrilla engaña a los jóvenes — y la verdad documentada detrás de cada una.\n\n'+
+  '📲 Toca cada mentira y lee la verdad con fuentes reales del CNMH y la Comisión de la Verdad.'
+);
+</script>
+</body>
+</html>
